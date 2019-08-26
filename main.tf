@@ -11,7 +11,7 @@
  *
  * ```hcl
  * module "aws_mfa" {
- *   source = "trussworks/logs/mfa"
+ *   source = "trussworks/mfa/aws"
  *
  *   iam_groups = ["engineers"]
  *   iam_users  = ["joe"]
