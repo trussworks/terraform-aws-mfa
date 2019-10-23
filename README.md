@@ -1,6 +1,8 @@
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 Configures IAM policy to enforce MFA when accessing the AWS API.
 
+This configured policy also requires users to assume a role for most API calls.
+
 Creates the following resources:
 
 * IAM policy requiring a valid MFA security token for all API calls except those needed for managing a user's own IAM user.

@@ -1,6 +1,8 @@
 /**
  * Configures IAM policy to enforce MFA when accessing the AWS API.
  *
+ * This configured policy also requires users to assume a role for most API calls.
+ *
  * Creates the following resources:
  *
  * * IAM policy requiring a valid MFA security token for all API calls except those needed for managing a user's own IAM user.
@@ -111,9 +113,16 @@ data "aws_iam_policy_document" "main" {
   }
 
   statement {
-    sid    = "BlockMostAccessUnlessSignedInWithMFA"
+    # Since this statement uses not_actions, it effectively blocks some statements
+    # that do not support MFA, such as sts:GetFederationToken.
+    # Therefore, this policy effectively forbids directly calling AWS APIs
+    # without assuming a role first.
+    sid = "BlockMostAccessUnlessSignedInWithMFA"
+
     effect = "Deny"
 
+    # not_actions is a list of actions that this statement does not apply to.
+    # Used to apply a policy statement to all actions except those listed.
     not_actions = [
       "iam:ChangePassword",
       "iam:CreateLoginProfile",
