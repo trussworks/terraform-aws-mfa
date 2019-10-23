@@ -117,7 +117,8 @@ data "aws_iam_policy_document" "main" {
     # that do not support MFA, such as sts:GetFederationToken.
     # Therefore, this policy effectively forbids directly calling AWS APIs
     # without assuming a role first.
-    sid    = "BlockMostAccessUnlessSignedInWithMFA"
+    sid = "BlockMostAccessUnlessSignedInWithMFA"
+
     effect = "Deny"
 
     # not_actions is a list of actions that this statement does not apply to.
