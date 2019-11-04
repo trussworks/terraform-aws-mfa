@@ -158,17 +158,18 @@ resource "aws_iam_policy" "main" {
   name        = "enforce-mfa"
   path        = "/"
   description = "Requires valid MFA security token for all API calls except those needed for managing a user's own IAM user."
-  policy      = "${data.aws_iam_policy_document.main.json}"
+  policy      = data.aws_iam_policy_document.main.json
 }
 
 resource "aws_iam_group_policy_attachment" "main" {
-  count      = "${length(var.iam_groups)}"
-  group      = "${element(var.iam_groups, count.index)}"
-  policy_arn = "${aws_iam_policy.main.arn}"
+  count      = length(var.iam_groups)
+  group      = element(var.iam_groups, count.index)
+  policy_arn = aws_iam_policy.main.arn
 }
 
 resource "aws_iam_user_policy_attachment" "main" {
-  count      = "${length(var.iam_users)}"
-  user       = "${element(var.iam_users, count.index)}"
-  policy_arn = "${aws_iam_policy.main.arn}"
+  count      = length(var.iam_users)
+  user       = element(var.iam_users, count.index)
+  policy_arn = aws_iam_policy.main.arn
 }
+
