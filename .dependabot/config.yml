@@ -1,4 +1,3 @@
-
 version: 1
 update_configs:
   # Keep go modules up to date, batching pull requests weekly
