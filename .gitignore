@@ -1,4 +1,4 @@
+.DS_Store
 .terraform
-terraform.tfstate
-*.tfstate*
-terraform.tfvars
+terraform.tfstate.backup
+terraform.tfstate.*.backup
