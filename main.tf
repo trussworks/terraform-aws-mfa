@@ -21,6 +21,9 @@
  * ```
  */
 
+data "aws_partition" "current" {
+}
+
 data "aws_iam_policy_document" "main" {
   statement {
     sid    = "AllowAllUsersToListAccounts"
@@ -57,7 +60,7 @@ data "aws_iam_policy_document" "main" {
     ]
 
     resources = [
-      "arn:aws:iam::*:user/&{aws:username}",
+      "arn:${data.aws_partition.current.partition}:iam::*:user/&{aws:username}",
     ]
   }
 
@@ -70,8 +73,8 @@ data "aws_iam_policy_document" "main" {
     ]
 
     resources = [
-      "arn:aws:iam::*:mfa/*",
-      "arn:aws:iam::*:user/&{aws:username}",
+      "arn:${data.aws_partition.current.partition}:iam::*:mfa/*",
+      "arn:${data.aws_partition.current.partition}:iam::*:user/&{aws:username}",
     ]
   }
 
@@ -87,8 +90,8 @@ data "aws_iam_policy_document" "main" {
     ]
 
     resources = [
-      "arn:aws:iam::*:mfa/&{aws:username}",
-      "arn:aws:iam::*:user/&{aws:username}",
+      "arn:${data.aws_partition.current.partition}:iam::*:mfa/&{aws:username}",
+      "arn:${data.aws_partition.current.partition}:iam::*:user/&{aws:username}",
     ]
   }
 
@@ -101,8 +104,8 @@ data "aws_iam_policy_document" "main" {
     ]
 
     resources = [
-      "arn:aws:iam::*:mfa/&{aws:username}",
-      "arn:aws:iam::*:user/&{aws:username}",
+      "arn:${data.aws_partition.current.partition}:iam::*:mfa/&{aws:username}",
+      "arn:${data.aws_partition.current.partition}:iam::*:user/&{aws:username}",
     ]
 
     condition {
