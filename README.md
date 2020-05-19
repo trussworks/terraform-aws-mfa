@@ -20,6 +20,12 @@ module "aws_mfa" {
 }
 ```
 
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12 |
+
 ## Providers
 
 | Name | Version |
@@ -29,7 +35,7 @@ module "aws_mfa" {
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | iam\_groups | List of IAM groups to enforce MFA when accessing the AWS API. | `list(string)` | `[]` | no |
 | iam\_users | List of IAM users to enforce MFA when accessing the AWS API. | `list(string)` | `[]` | no |
 
