@@ -141,6 +141,7 @@ data "aws_iam_policy_document" "main" {
       "iam:ListServiceSpecificCredentials",
       "iam:ListMFADevices",
       "iam:GetAccountSummary",
+      "iam:GetLoginProfile",
       "sts:GetSessionToken",
     ]
 
