@@ -16,7 +16,7 @@ module "aws_mfa" {
   source = "trussworks/mfa/aws"
 
   iam_groups = ["engineers"]
-  iam_users  = ["joe"]
+  iam_users  = ["jill"]
 }
 ```
 
@@ -24,13 +24,14 @@ module "aws_mfa" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12 |
+| terraform | ~> 0.13.0 |
+| aws | ~> 3 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
+| aws | ~> 3 |
 
 ## Inputs
 

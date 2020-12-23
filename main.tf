@@ -16,7 +16,7 @@
  *   source = "trussworks/mfa/aws"
  *
  *   iam_groups = ["engineers"]
- *   iam_users  = ["joe"]
+ *   iam_users  = ["jill"]
  * }
  * ```
  */
