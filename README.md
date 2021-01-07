@@ -24,14 +24,14 @@ module "aws_mfa" {
 
 | Name | Version |
 |------|---------|
-| terraform | ~> 0.13.0 |
-| aws | ~> 3 |
+| terraform | >= 0.13.0 |
+| aws | >= 3 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | ~> 3 |
+| aws | >= 3 |
 
 ## Inputs
 
