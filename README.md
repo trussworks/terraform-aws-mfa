@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 Configures IAM policy to enforce MFA when accessing the AWS API.
 
