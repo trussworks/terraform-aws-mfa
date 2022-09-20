@@ -27,4 +27,4 @@ repos:
     hooks:
       - id: golangci-lint
         args:
-          - --verbose
+          - --timeout 3m --verbose
