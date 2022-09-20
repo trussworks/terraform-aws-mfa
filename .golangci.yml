@@ -4,3 +4,4 @@ linters:
     - revive
     - gofmt
     - goimports
+    - unused
