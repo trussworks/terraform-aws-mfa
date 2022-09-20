@@ -26,4 +26,3 @@ repos:
     rev: v1.46.0
     hooks:
       - id: golangci-lint
-        entry: golangci-lint run --timeout 2m --verbose
