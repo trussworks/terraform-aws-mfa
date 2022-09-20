@@ -26,3 +26,5 @@ repos:
     rev: v1.46.0
     hooks:
       - id: golangci-lint
+        args:
+          - --verbose
