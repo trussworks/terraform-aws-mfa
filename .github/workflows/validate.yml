@@ -38,4 +38,4 @@ jobs:
           path: ~/.cache/pre-commit
           key: pre-commit-dot-cache-{{ hashFiles(.pre-commit-config.yaml') }}
       - name: Pre-commit checks
-        run: pre-commit run --all-files --show-diff-on-failure --verbose
+        run: pre-commit run --all-files --show-diff-on-failure
