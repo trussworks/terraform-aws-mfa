@@ -1,3 +1,9 @@
+# name: validate
+
+# jobs:
+#   validate:
+#     uses: trussworks/shared-actions/.github/workflows/validate.yml@main
+
 name: validate
 
 on:
@@ -10,4 +16,26 @@ on:
 
 jobs:
   validate:
-    uses: trussworks/shared-actions/.github/workflows/validate.yml@main
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+      - name: Install pre-commit
+        run: |
+          brew install terraform-docs
+          pip install pre-commit
+      - name: Set up Go
+        uses: actions/setup-go@v3
+      - name: Install GoReleaser
+        uses: goreleaser/goreleaser-action@v3
+        with:
+          install-only: true
+      - name: Show GoReleaser version
+        run: goreleaser -v
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit-dot-cache-{{ hashFiles(.pre-commit-config.yaml') }}
+      - name: Pre-commit checks
+        run: pre-commit run --all-files --show-diff-on-failure --verbose
