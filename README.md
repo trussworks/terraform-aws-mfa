@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 Configures IAM policy to enforce MFA when accessing the AWS API.
 
@@ -24,26 +25,39 @@ module "aws_mfa" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.13.0 |
-| aws | >= 3 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | >= 3 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [aws_iam_group_policy_attachment.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group_policy_attachment) | resource |
+| [aws_iam_policy.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [aws_iam_user_policy_attachment.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_user_policy_attachment) | resource |
+| [aws_iam_policy_document.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_partition.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/partition) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| iam\_groups | List of IAM groups to enforce MFA when accessing the AWS API. | `list(string)` | `[]` | no |
-| iam\_users | List of IAM users to enforce MFA when accessing the AWS API. | `list(string)` | `[]` | no |
+| <a name="input_iam_groups"></a> [iam\_groups](#input\_iam\_groups) | List of IAM groups to enforce MFA when accessing the AWS API. | `list(string)` | `[]` | no |
+| <a name="input_iam_users"></a> [iam\_users](#input\_iam\_users) | List of IAM users to enforce MFA when accessing the AWS API. | `list(string)` | `[]` | no |
 
 ## Outputs
 
-No output.
-
+No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Developer Setup
