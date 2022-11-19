@@ -2,7 +2,7 @@ module terraform-aws-mfa
 
 go 1.19
 
-require github.com/gruntwork-io/terratest v0.41.0
+require github.com/gruntwork-io/terratest v0.41.3
 
 require (
 	cloud.google.com/go v0.83.0 // indirect
