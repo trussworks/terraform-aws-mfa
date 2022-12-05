@@ -175,4 +175,3 @@ resource "aws_iam_user_policy_attachment" "main" {
   user       = element(var.iam_users, count.index)
   policy_arn = aws_iam_policy.main.arn
 }
-
