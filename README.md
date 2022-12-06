@@ -25,14 +25,14 @@ module "aws_mfa" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3 |
+| terraform | >= 0.13.0 |
+| aws | >= 3 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3 |
+| aws | >= 3 |
 
 ## Modules
 
@@ -52,8 +52,8 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_iam_groups"></a> [iam\_groups](#input\_iam\_groups) | List of IAM groups to enforce MFA when accessing the AWS API. | `list(string)` | `[]` | no |
-| <a name="input_iam_users"></a> [iam\_users](#input\_iam\_users) | List of IAM users to enforce MFA when accessing the AWS API. | `list(string)` | `[]` | no |
+| iam\_groups | List of IAM groups to enforce MFA when accessing the AWS API. | `list(string)` | `[]` | no |
+| iam\_users | List of IAM users to enforce MFA when accessing the AWS API. | `list(string)` | `[]` | no |
 
 ## Outputs
 
@@ -66,20 +66,4 @@ Install dependencies (macOS)
 
 ```shell
 brew install pre-commit go terraform terraform-docs
-```
-
-### Testing
-
-[Terratest](https://github.com/gruntwork-io/terratest) is being used for
-automated testing with this module. Tests in the `test` folder can be run
-locally by running the following command:
-
-```text
-make test
-```
-
-Or with aws-vault:
-
-```text
-AWS_VAULT_KEYCHAIN_NAME=<NAME> aws-vault exec <PROFILE> -- make test
 ```

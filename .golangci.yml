@@ -1,9 +1,0 @@
-linters:
-  enable:
-    - gosec
-    - revive
-    - gofmt
-    - goimports
-    - unused
-run:
-  timeout: 2m
