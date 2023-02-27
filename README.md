@@ -1,5 +1,5 @@
 <!-- markdownlint-disable no-inline-html -->
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 Configures IAM policy to enforce MFA when accessing the AWS API.
 
 This configured policy also requires users to assume a role for most API calls.
@@ -58,7 +58,7 @@ No modules.
 ## Outputs
 
 No outputs.
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
 
 ## Developer Setup
 
