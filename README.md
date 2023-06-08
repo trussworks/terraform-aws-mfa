@@ -25,7 +25,7 @@ module "aws_mfa" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.13.0 |
+| terraform | >= 1.0 |
 | aws | >= 3 |
 
 ## Providers
