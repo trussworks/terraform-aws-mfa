@@ -104,7 +104,6 @@ data "aws_iam_policy_document" "main" {
     ]
 
     resources = [
-      "arn:${data.aws_partition.current.partition}:iam::*:mfa/*",
       "arn:${data.aws_partition.current.partition}:iam::*:user/&{aws:username}",
     ]
 
